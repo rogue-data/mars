@@ -1,5 +1,5 @@
 ## mars
-#MARS : Music Augmented by Recommendation System
+# MARS : Music Augmented by Recommendation System
 
 
 These jupyter notebooks were run on google colab , with the google drive mounted , thus the file path are as per that file structure.

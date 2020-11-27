@@ -242,27 +242,27 @@ function change_bg(){
         /*console.log(x.value)*/
         if(x.value=='1'){
             bd_img.style.background="url('./images/mohamed-nohassi-odxB5oIG_iA-unsplash.jpg') no-repeat";
-            bd_img.style.backgroundSize="cover";
+            bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(255,247,247)";
+            mode_col.style.color="rgb(0,0,0)";
             font_mode.forEach(y => {
-                y.style.color="rgb(255,247,247)";
+                y.style.color="rgb(0,0,0)";
             })
         }
         else if(x.value=='2'){
             bd_img.style.background="url('./images/peace4.jpg') no-repeat";
-            bd_img.style.backgroundSize="cover";
+            bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(255,247,247)";
+            mode_col.style.color="rgb(0,0,0)";
             font_mode.forEach(y => {
-                y.style.color="rgb(255,247,247)";
+                y.style.color="rgb(0,0,0)";
             })
         }
         else if(x.value=='3'){
             bd_img.style.background="url('./images/work.jpg') no-repeat";
-            bd_img.style.backgroundSize="cover";
+            bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
             mode_col.style.color="rgb(0,0,0)";
@@ -272,22 +272,22 @@ function change_bg(){
         }
         else if(x.value=='4'){
             bd_img.style.background="url('./images/party2.jpg') no-repeat";
-            bd_img.style.backgroundSize="cover";
+            bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(255,247,247)";
+            mode_col.style.color="rgb(0,0,0)";
             font_mode.forEach(y => {
-                y.style.color="rgb(255,247,247)";
+                y.style.color="rgb(0,0,0)";
             })
         }
         else if(x.value=='5'){
             bd_img.style.background="url('./images/workout.jpg') no-repeat";
-            bd_img.style.backgroundSize="cover";
+            bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(255,247,247)";
+            mode_col.style.color="rgb(0,0,0)";
             font_mode.forEach(y => {
-                y.style.color="rgb(255,247,247)";
+                y.style.color="rgb(0,0,0)";
             })
         }
 
@@ -298,3 +298,4 @@ function change_bg(){
 }
 
 /* End Changing Background Image */
+

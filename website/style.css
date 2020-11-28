@@ -1,3 +1,20 @@
+@font-face{
+    font-family: fon1;
+    src:url(./fonts/Comfortaa-Regular.ttf);
+}
+@font-face{
+    font-family: fon2;
+    src:url(./fonts/NanumGothic-Regular.ttf);
+}
+@font-face{
+    font-family: fon3;
+    src:url(./fonts/OpenSans-Regular.ttf);
+}
+@font-face{
+    font-family: fon4;
+    src:url(./fonts/Comfortaa-Medium.ttf);
+}
+
 *{
     box-sizing: border-box;
 }
@@ -5,12 +22,16 @@ body{
     background: url('./images/mohamed-nohassi-odxB5oIG_iA-unsplash.jpg') no-repeat;
     background-size: 100%;
     margin: 0;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    font-family: fon1;
 }
 .feature{
-    width: 20vw;
+    width: 10vw;
     height: 100vh;
     position: fixed;
-    background-color: rgba(175, 183, 193, 0.3);
+    background-color: rgba(175, 183, 193, 0.5);
+    z-index: 3;
 }
 /*navigation*/
   nav {
@@ -33,7 +54,7 @@ h3{
 }
 #modes{
     color: #111111;
-    margin-left: 6vw;
+    margin-left: 1vw;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -47,7 +68,7 @@ h3{
     position: relative;
     display: inline-block;
     width: 65px;
-    height: 38px;
+    height: 25px;
   }
   
   /* Hide default HTML checkbox */
@@ -65,7 +86,7 @@ h3{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #fd6d94;
     -webkit-transition: .5s;
     transition: .5s;
   }
@@ -73,27 +94,27 @@ h3{
   .slider:before {
     position: absolute;
     content: "";
-    height: 30px;
-    width: 30px;
-    left: 5px;
-    bottom: 4px;
-    background-color: white;
+    height: 25px;
+    width: 25px;
+    /* left: 5px; */
+    /* bottom: 4px; */
+    background-color:#ffe8ee;
     -webkit-transition: .5s;
     transition: .5s;
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #6ec6d1;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #6ec6d1;
   }
   
   input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
   }
   
   /* Rounded sliders */
@@ -140,7 +161,7 @@ h3{
     top: 0;
     right: 15px;
     left: 15px;
-    padding: 13px 22px 10px 184px;
+    padding: 15px 22px 10px 184px;
     background-color: #fff7f7;
     border-radius: 15px 15px 0 0;
     transition: 0.3s ease top;
@@ -465,10 +486,22 @@ h3{
     left: 5vw;
 }
   /*End of Artist and song info*/
+  .section{
+      display: block;
+  }
+  .section1{
+      height: 100%;
+  }
+  .section2{
+      height:100%;
+
+  }
 /*Second Page*/
 .second{
     width: 100vw;
-    height: 250vh;
+    height: 100%;
+    /* margin-top: -100px; */
+    /* height: 250vh; */
 }
 /*End of Second page*/
 /*Sticky Player*/
@@ -476,6 +509,7 @@ h3{
     position: fixed;
     bottom: 18vh;
     width: 100vw;
+    z-index: 3;
 }
 .nav{
     position: fixed;
@@ -494,28 +528,31 @@ h3{
 
 .searchTerm {
   width: 100%;
-  border: 3px solid #00B4CC;
-  background-color: rgba(255,255,255,0.85);
-  border-right: none;
+  border: none;
+  background-color: #fff;
   padding: 14px;
-  height: 36px;
-  border-radius: 100px 0 0 100px;
+  height: 45px;
+  font-size: large;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
   outline: none;
-  color: #9DBFAF;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: #000;
 }
 
 .searchButton {
   width: 80px;
-  height: 35px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  height: 45px;
+  border: none;
+  background: #fff;
   text-align: center;
-  color: #fff;
-  border-radius: 0 90px 90px 0;
+  color: #1f1f1f;
+  border-radius: 0 10px 10px 0;
   cursor: pointer;
   font-size: 20px;
 }
@@ -533,39 +570,43 @@ h3{
 /* Recommendations */
 #rec_head{
     position: absolute;
-    top: 155vh;
-    left: 49vw;
-
+    top: 105vh;
+    left: 46vw;
+    z-index: 2;
+    color: #ffe8ee;
+}
+.recommend_div{
+    width: 15vw;
+    height: 40vh;
+    position: absolute;
+    top: 120vh;
+    border-radius: 5%;
 }
 .recommend_div1{
     background:url('./images/664072-arijit-singh.jpg');
     background-size: cover;
-    width: 15vw;
-    height: 40vh;
-    position: absolute;
-    top: 180vh;
-    left: 25vw;
-    border-radius: 5%;
+    /* margin-left: 15%; */
+    left: 12vw;
 }
 .recommend_div2{
     background:url('./images/664072-arijit-singh.jpg');
     background-size: cover;
-    width: 15vw;
-    height: 40vh;
-    position: absolute;
-    top: 180vh;
-    left: 50vw;
-    border-radius: 5%;
+    left: 29vw;
 }
 .recommend_div3{
     background:url('./images/664072-arijit-singh.jpg');
     background-size: cover;
-    width: 15vw;
-    height: 40vh;
-    position: absolute;
-    top: 180vh;
-    left: 75vw;
-    border-radius: 5%;
+    left: 46vw;
+}
+.recommend_div4{
+    background:url('./images/664072-arijit-singh.jpg');
+    background-size: cover;
+    left: 63vw;
+}
+.recommend_div5{
+    background:url('./images/664072-arijit-singh.jpg');
+    background-size: cover;
+    left: 80vw;
 }
 .recommend_text{
     position: absolute;
@@ -580,29 +621,31 @@ h3{
     height: 8vh;
     width: 15vw;
     top: 33.1vh;
-    border-radius: 0% 0% 15% 15%;
+    border-radius: 0% 0% 5% 5%;
 }
 #song_name{
     position: absolute;
     left: 5vw;
     top: 1vw;
     color: #1f1f1f;
+    text-align: center;
     font-weight: bold;
 }
 .text{
     position: absolute;
     left: 2%;
     color: black;
+    padding-left: 10px;
     font-weight: bold;
     opacity: 0;
 }
-.recommend_div1:hover .recommend_text,.recommend_div2:hover .recommend_text,.recommend_div3:hover .recommend_text{
+.recommend_div1:hover .recommend_text,.recommend_div2:hover .recommend_text,.recommend_div3:hover .recommend_text,.recommend_div4:hover .recommend_text,.recommend_div5:hover .recommend_text{
     transform: translateY(-100%);
     transition-duration: 0.5s;
     background-color: rgba(210, 210, 210, 0.9);
     transition-duration: 0.5s;
 }
-.recommend_div1:hover .text,.recommend_div2:hover .text,.recommend_div3:hover .text{
+.recommend_div1:hover .text,.recommend_div2:hover .text,.recommend_div3:hover .text,.recommend_div4:hover .text,.recommend_div5:hover .text{
     opacity: 1;
     transition-duration: 0.5s;
 }

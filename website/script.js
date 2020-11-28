@@ -261,7 +261,7 @@ function change_bg(){
             })
         }
         else if(x.value=='3'){
-            bd_img.style.background="url('./images/work.jpg') no-repeat";
+            bd_img.style.background="url('./images/work2.jpg') no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
             var mode_col=document.querySelector("#modes");
@@ -298,4 +298,3 @@ function change_bg(){
 }
 
 /* End Changing Background Image */
-

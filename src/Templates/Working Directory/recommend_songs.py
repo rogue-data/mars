@@ -4,7 +4,8 @@ from cs_model import recommend_cosine
 import pandas as pd
 
 
-def recommend_songs(song):
+def recommend_songs(song,mode='default'):
+    mody=mode
     # Fetch url
     url = song_url(song)
     # Get the metadata
@@ -17,7 +18,7 @@ def recommend_songs(song):
     # Save the dataframe
     df.to_csv("./dataset/final_dataset.csv", index=False)
     # Find the similarity of the songs
-    return recommend_cosine(df)
+    return recommend_cosine(df,mody)
 
 
 # print(recommend_songs('Tum Hi Ho Arjit Singh'))

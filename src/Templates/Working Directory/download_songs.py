@@ -12,9 +12,9 @@ def download_song(name):
     url='https://www.youtube.com/watch?v='+result[0]['id']
     video = pafy.new(url) 
     audiostreams = video.audiostreams
-    #chosing song by quality 
+    #chosing song by quality
     audiostreams[3].download()
-    #renaming 
+    #renaming
     #print(f"Location: {os.listdir()}")
     os.rename((os.listdir())[0],"0.mp3")
-download_song('Darkside')
+# download_song('Darkside')

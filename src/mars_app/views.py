@@ -2,8 +2,16 @@ from django.shortcuts import render
 from .wd import recommend_songs
 # Create your views here.
 
-def home(request,song_name='alone',mode='default'):
-
-    recommendations=recommend_songs.recommend_songs(song_name,mode)
+song='alone'
+def song_func(request,mode='default'):
+    song=request.GET['song_play']
+    # Download song
     
+    # Get Recommendations
+    crr,recommendations=recommend_songs.recommend_songs(song,mode)
+    # print(crr.name)
+    print(recommendations) 
+    return render(request,'index.html',crr)
+
+def home(request):
     return render(request,'index.html')

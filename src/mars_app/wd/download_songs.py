@@ -3,7 +3,8 @@ import pafy
 import os
  
 def download_song(name):
-    os.chdir('./Working Directory/songs')
+    path=os.path.join(os.path.dirname(os.path.dirname(__file__)),'wd/songs/')
+    os.chdir(path)
     try:
         os.remove('0.mp3')
     except:

@@ -25,4 +25,4 @@ def recommend_cosine(data,mode):
         song_df.index[0], None]).squeeze()
         
     # sending the complete data
-    return (similarity_data.sort_values(by='Similarity with song', ascending=False)[1:6])
+    return (similarity_data.sort_values(by='Similarity with song', ascending=False)[1:6]).id

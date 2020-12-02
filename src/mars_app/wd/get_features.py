@@ -1,4 +1,4 @@
-from . import fetch_data_api 
+from . import fetch_data_api
 
 
 def getTrackFeatures(id):
@@ -16,6 +16,7 @@ def getTrackFeatures(id):
     duration_ms = meta['duration_ms']
     popularity = meta['popularity']
     year = int(meta['album']['release_date'][:4])
+    image_url=(meta['album']['images'][0])['url']
 
     # features
     acousticness = features[0]['acousticness']
@@ -35,4 +36,4 @@ def getTrackFeatures(id):
              id[-22:], instrumentalness, key, liveness, loudness,
              mode, name, popularity, speechiness, tempo,
              valence, year]
-    return track
+    return track, image_url , name , artists ,year

@@ -68,7 +68,7 @@
             <div id="player-content">
                 <div id="album-art">
                     <!-- Insert Images Here-->
-                    <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
+                    <img src="{{img}}" class="active" id="_1">
                     <!--<img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
                     <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
                     <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
@@ -104,27 +104,29 @@
         <section class="section1">
 
                 <!--search box-->
+        <form action="song">
         <div class="searchbar">
             <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+            <input type="text" name="song_play" class="searchTerm" placeholder="What are you looking for?">
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
             </div>
         </div>
+    </form>
         <!--End of search box-->
 
         <!--Artist and Info-->
 
         <div class="song_">
-            <div id="song_img"></div>
+            <div id="song_img" style="background: url({{img}});     background-size: cover;"></div>
             <div id="song_info">
                 <div class="info_">
                     <h2>Now Playing:</h2>
                     <p>
-                        Tum Hi Ho</br>
-                        Artist: Arjit Singh</br>
-                        Year: 2013<br>
+                        Name: {{name}}</br>
+                        Artist: {{artist}}</br>
+                        Year: {{year}}<br>
                     </p>
                 </div>
             </div>

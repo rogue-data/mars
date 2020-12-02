@@ -39,11 +39,10 @@
       <label class="switch">
         <input type="radio" name="mode" value="5" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label> 
+      </label>
         </nav>
     </div>
       <!--End of Navbar-->
-
 
 
       <!--Music Player-->
@@ -68,7 +67,7 @@
             <div id="player-content">
                 <div id="album-art">
                     <!-- Insert Images Here-->
-                    <img src="{{img}}" class="active" id="_1">
+                    <img src="{{crr.img}}" class="active" id="_1">
                     <!--<img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg" class="active" id="_1">
                     <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_2.jpg" id="_2">
                     <img src="https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_3.jpg" id="_3">
@@ -119,14 +118,14 @@
         <!--Artist and Info-->
 
         <div class="song_">
-            <div id="song_img" style="background: url({{img}});     background-size: cover;"></div>
+            <div id="song_img" style="background: url({{crr.img}}); background-size: cover;"></div>
             <div id="song_info">
                 <div class="info_">
                     <h2>Now Playing:</h2>
                     <p>
-                        Name: {{name}}</br>
-                        Artist: {{artist}}</br>
-                        Year: {{year}}<br>
+                        Name: {{crr.name}}</br>
+                        Artist: {{crr.artist}}</br>
+                        Year: {{crr.year}}<br>
                     </p>
                 </div>
             </div>
@@ -140,66 +139,75 @@
             <!--Second (Recommendation Page)-->
             <div class="second">
                 <div id="rec_head"><h1>Songs you may like</h1></div>
-                <div class="recommend_div recommend_div1">
-                    <div class="recommend"><div id="song_name">Tum Hi Ho</div>
+                <a href="{% url 'song' %}?song_play={{rc.name.0}}">
+                <div class="recommend_div recommend_div1" style="background: url({{rc.img.0}}); background-size: cover;">
+                    <div class="recommend"><div id="song_name">{{rc.name.0}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Tum Hi Ho</br> -->
-                            Artist: Arjit Singh</br>
-                            Year: 2013<br>
+                            Artist: {{rc.artist.0}}</br>
+                            Year: {{rc.year.0}}<br>
                         </p></div>
                     </div>
                 </div>
-                <div class="recommend_div recommend_div2">
-                    <div class="recommend"><div id="song_name">Samjhawan</div>
+                </a>
+                <a href="{% url 'song' %}?song_play={{rc.name.1}}">
+                <div class="recommend_div recommend_div2" style="background: url({{rc.img.1}}); background-size: cover;">
+                    <div class="recommend"><div id="song_name">{{rc.name.1}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--   Song Name: Samjhawan</br> -->
-                            Artist: Arjit Singh</br>
-                            Year: 2016<br>
+                        Artist: {{rc.artist.1}}</br>
+                        Year: {{rc.year.1}}<br>
                         </p></div>
                     </div>
                 </div>
-                <div class="recommend_div recommend_div3">
-                    <div class="recommend"><div id="song_name">Shaayad</div>
+                </a>
+                <a href="{% url 'song' %}?song_play={{rc.name.2}}">
+                <div class="recommend_div recommend_div3" style="background: url({{rc.img.2}}); background-size: cover;">
+                    <div class="recommend"><div id="song_name">{{rc.name.2}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Song Name: Shaayad</br> -->
-                            Artist: Arjit Singh</br>
-                            Year: 2020<br>
+                        Artist: {{rc.artist.2}}</br>
+                        Year: {{rc.year.2}}<br>
                         </p></div>
                     </div>
                 </div>
-                <div class="recommend_div recommend_div4">
-                    <div class="recommend"><div id="song_name">Shaayad</div>
+                </a>
+                <a href="{% url 'song' %}?song_play={{rc.name.3}}">
+                <div class="recommend_div recommend_div4" style="background: url({{rc.img.3}}); background-size: cover;">
+                    <div class="recommend"><div id="song_name">{{rc.name.3}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Song Name: Shaayad</br> -->
-                            Artist: Arjit Singh</br>
-                            Year: 2020<br>
+                        Artist: {{rc.artist.3}}</br>
+                        Year: {{rc.year.3}}<br>
                         </p></div>
                     </div>
                 </div>
-                <div class="recommend_div recommend_div5">
-                    <div class="recommend"><div id="song_name">Shaayad</div>
+                </a>
+                <a href="{% url 'song' %}?song_play={{rc.name.4}}">
+                <div class="recommend_div recommend_div5" style="background: url({{rc.img.4}}); background-size: cover;">
+                    <div class="recommend"><div id="song_name">{{rc.name.4}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Song Name: Shaayad</br> -->
-                            Artist: Arjit Singh</br>
-                            Year: 2020<br>
+                        Artist: {{rc.artist.4}}</br>
+                        Year: {{rc.year.4}}<br>
                         </p></div>
                     </div>
                 </div>
+                </a>
             </div>
         </section>
     </div>
 
-    
 <!-- </div> -->
 <!--End of Second Page-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -217,7 +225,7 @@
 <script>/*Music Player*/ 
     $(function()
 {
-    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['album_name'], trackNames = ['Song_name'], albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}"], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['album_name'], trackNames = ['Song_name'], albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v=1"], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     function playPause()
     {

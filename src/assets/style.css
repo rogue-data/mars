@@ -466,9 +466,9 @@ h3{
 #song_img{
     position: absolute;
     left: 0;
-    background: url('./images/664072-arijit-singh.jpg');
+    /* background: url('./images/664072-arijit-singh.jpg'); */
     border-radius: 100%;
-    background-size: cover;
+    background-size: auto;
     width: 40%;
     height: 80%;
 }

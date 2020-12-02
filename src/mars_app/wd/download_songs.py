@@ -12,7 +12,7 @@ def download_song(name):
     result = YoutubeSearch(name, max_results=1).to_dict()
     url='https://www.youtube.com/watch?v='+result[0]['id']
     video = pafy.new(url) 
-    audiostreams = video.audiostreams
+    audiostreams = video.audiostreams 
     #chosing song by quality
     audiostreams[3].download()
     #renaming

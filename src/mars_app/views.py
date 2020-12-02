@@ -11,7 +11,7 @@ def song_func(request,mode='default'):
     crr,recommendations=recommend_songs.recommend_songs(song,mode)
     # print(crr.name)
     print(recommendations) 
-    return render(request,'index.html',crr) 
+    return render(request,'index.html',{'crr':crr,'rc':recommendations})
 
 def home(request):
     return render(request,'index.html')

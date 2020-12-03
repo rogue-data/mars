@@ -139,7 +139,7 @@
             <!--Second (Recommendation Page)-->
             <div class="second">
                 <div id="rec_head"><h1>Songs you may like</h1></div>
-                <a href="{% url 'song' %}?song_play={{rc.name.0}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
+                <a href="{% url 'song' %}?song_play={{rc.name.0}}+{{rc.artist.0}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div1" style="background: url({{rc.img.0}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.0}}</div>
                     </div>
@@ -152,7 +152,7 @@
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.1}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
+                <a href="{% url 'song' %}?song_play={{rc.name.1}}+{{rc.artist.1}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div2" style="background: url({{rc.img.1}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.1}}</div>
                     </div>
@@ -165,7 +165,7 @@
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.2}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
+                <a href="{% url 'song' %}?song_play={{rc.name.2}}+{{rc.artist.2}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div3" style="background: url({{rc.img.2}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.2}}</div>
                     </div>
@@ -178,7 +178,7 @@
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.3}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
+                <a href="{% url 'song' %}?song_play={{rc.name.3}}+{{rc.artist.3}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div4" style="background: url({{rc.img.3}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.3}}</div>
                     </div>
@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.4}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
+                <a href="{% url 'song' %}?song_play={{rc.name.4}}+{{rc.artist.4}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div5" style="background: url({{rc.img.4}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.4}}</div>
                     </div>
@@ -223,9 +223,10 @@
   </script>
 <!-- <script src="{% static 'script.js' %}"></script> -->
 <script>/*Music Player*/ 
+    
     $(function()
 {
-    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, albums = ['album_name'], trackNames = ['Song_name'], albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v=1"], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, trackNames = ['{{crr.name}}'],albums=['Explicitly for You'] ,albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v=1"], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     function playPause()
     {

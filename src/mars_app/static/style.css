@@ -562,10 +562,10 @@ h3{
 
 /*Resize the wrap to see the search bar change!*/
 .searchbar{
-  width: 40%;
+  width: 50vw;
   position: absolute;
   top: 10%;
-  left: 60%;
+  left: 60vw;
   transform: translate(-50%, -50%);
 }
 
@@ -614,14 +614,14 @@ h3{
 .recommend_text{
     position: absolute;
     background-color: rgba(255, 255, 255, 0);
-    height: 15vh;
+    height: 10vh;
     width: 15vw;
     top: 33.1vh;
 }
 .recommend{
     background-color: rgb(210, 210, 210);
     position: absolute;
-    height: 8vh;
+    height: 13vh;
     width: 15vw;
     top: 33.1vh;
     /* text-align:center; */
@@ -644,6 +644,9 @@ h3{
     padding-left: 10px;
     font-weight: bold;
     opacity: 0;
+}
+.text p{
+    margin-bottom: 0;
 }
 .recommend_div1:hover .recommend_text,.recommend_div2:hover .recommend_text,.recommend_div3:hover .recommend_text,.recommend_div4:hover .recommend_text,.recommend_div5:hover .recommend_text{
     transform: translateY(-99%);

@@ -1,10 +1,8 @@
 from . import fetch_data_api
 
 
-def getTrackFeatures(id):
-    client_id = 'e55a0893bd7f4c7e9628fe6ee58f4324'
-    client_secret = 'a434335709d84dac9c222a941db65c30'
-    sp = fetch_data_api.sp_api(client_id, client_secret)
+def getTrackFeatures(id,sp):
+    
     meta = sp.track(id)
     features = sp.audio_features(id)
 

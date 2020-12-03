@@ -12,35 +12,46 @@
 <body>
     <!--Navbar-->
     <div class="feature">
-          
-         <nav>
+        <form action="song">  
+        <!--search box-->
+            <div class="searchbar">
+            <div class="search">
+            <input type="text" name="song_play" class="searchTerm" placeholder="What are you looking for?">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+            </div>
+            </div>
+        <!--End of search box-->
+    <nav>
         <h1 id="modes"> Mode</h1>
-      <h3> For you</h3>
-      <label class="switch">
+        <h3> For you</h3>
+        <label class="switch">
         <input type="radio" checked name="mode" value="1" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label>
-      <h3> Peace</h3>
-      <label class="switch">
+        </label>
+        <h3> Peace</h3>
+        <label class="switch">
         <input type="radio" name="mode" value="2" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label> 
-      <h3> Work</h3>
-      <label class="switch">
+        </label> 
+        <h3> Work</h3>
+        <label class="switch">
         <input type="radio" name="mode" value="3" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label> 
-      <h3> Party</h3>
-      <label class="switch">
+        </label> 
+        <h3> Party</h3>
+        <label class="switch">
         <input type="radio" name="mode" value="4" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label> 
-      <h3> Workout</h3>
-      <label class="switch">
+        </label> 
+        <h3> Workout</h3>
+        <label class="switch">
         <input type="radio" name="mode" value="5" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
-      </label>
+        </label>
         </nav>
+    </form>
     </div>
       <!--End of Navbar-->
 
@@ -102,18 +113,7 @@
     <div id="main" class="scroll-container">
         <section class="section1">
 
-                <!--search box-->
-        <form action="song">
-        <div class="searchbar">
-            <div class="search">
-            <input type="text" name="song_play" class="searchTerm" placeholder="What are you looking for?">
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
-            </div>
-        </div>
-    </form>
-        <!--End of search box-->
+                
 
         <!--Artist and Info-->
 
@@ -131,9 +131,9 @@
             </div>
 
         </div>
-
       <!--End of Artist and Info-->
         </section>
+
 
         <section class="section2">
             <!--Second (Recommendation Page)-->

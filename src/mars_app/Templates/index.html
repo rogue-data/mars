@@ -123,8 +123,8 @@
                 <div class="info_">
                     <h2>Now Playing:</h2>
                     <p>
-                        Name: {{crr.name}}</br>
-                        Artist: {{crr.artist}}</br>
+                        Name: {{crr.name}}<br>
+                        Artist: {{crr.artist}}<br>
                         Year: {{crr.year}}<br>
                     </p>
                 </div>
@@ -139,66 +139,66 @@
             <!--Second (Recommendation Page)-->
             <div class="second">
                 <div id="rec_head"><h1>Songs you may like</h1></div>
-                <a href="{% url 'song' %}?song_play={{rc.name.0}}">
+                <a href="{% url 'song' %}?song_play={{rc.name.0}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div1" style="background: url({{rc.img.0}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.0}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
-                        <!--  Tum Hi Ho</br> -->
-                            Artist: {{rc.artist.0}}</br>
+                        <!--  Tum Hi Ho<br> -->
+                            Artist: {{rc.artist.0}}<br>
                             Year: {{rc.year.0}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.1}}">
+                <a href="{% url 'song' %}?song_play={{rc.name.1}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div2" style="background: url({{rc.img.1}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.1}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
-                        <!--   Song Name: Samjhawan</br> -->
-                        Artist: {{rc.artist.1}}</br>
+                        <!--   Song Name: Samjhawan<br> -->
+                        Artist: {{rc.artist.1}}<br>
                         Year: {{rc.year.1}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.2}}">
+                <a href="{% url 'song' %}?song_play={{rc.name.2}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div3" style="background: url({{rc.img.2}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.2}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
-                        <!--  Song Name: Shaayad</br> -->
-                        Artist: {{rc.artist.2}}</br>
+                        <!--  Song Name: Shaayad<br> -->
+                        Artist: {{rc.artist.2}}<br>
                         Year: {{rc.year.2}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.3}}">
+                <a href="{% url 'song' %}?song_play={{rc.name.3}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div4" style="background: url({{rc.img.3}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.3}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
-                        <!--  Song Name: Shaayad</br> -->
-                        Artist: {{rc.artist.3}}</br>
+                        <!--  Song Name: Shaayad<br> -->
+                        Artist: {{rc.artist.3}}<br>
                         Year: {{rc.year.3}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.4}}">
+                <a href="{% url 'song' %}?song_play={{rc.name.4}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div5" style="background: url({{rc.img.4}}); background-size: cover;">
                     <div class="recommend"><div id="song_name">{{rc.name.4}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
-                        <!--  Song Name: Shaayad</br> -->
-                        Artist: {{rc.artist.4}}</br>
+                        <!--  Song Name: Shaayad<br> -->
+                        Artist: {{rc.artist.4}}<br>
                         Year: {{rc.year.4}}<br>
                         </p></div>
                     </div>
@@ -456,7 +456,7 @@
     initPlayer();
 });
 /* End of Music Player */
-
+var chx='1';
 /* Changing Background Image */
 
 function change_bg(){
@@ -465,6 +465,7 @@ function change_bg(){
     sw.forEach(x => {if(x.checked){
         /*console.log(x.value)*/
         if(x.value=='1'){
+            chx='1';
             bd_img.style.background="url(\"{%static './images/mohamed-nohassi-odxB5oIG_iA-unsplash.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
@@ -475,6 +476,7 @@ function change_bg(){
             })
         }
         else if(x.value=='2'){
+            chx='2';
             bd_img.style.background="url(\"{%static './images/peace4.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
@@ -485,6 +487,7 @@ function change_bg(){
             })
         }
         else if(x.value=='3'){
+            chx='3';
             bd_img.style.background="url(\"{%static './images/work3.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
@@ -495,6 +498,7 @@ function change_bg(){
             })
         }
         else if(x.value=='4'){
+            chx='4';
             bd_img.style.background="url(\"{%static './images/party2.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');
@@ -505,6 +509,7 @@ function change_bg(){
             })
         }
         else if(x.value=='5'){
+            chx='5';
             bd_img.style.background="url(\"{%static './images/workout.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
             var font_mode=document.querySelectorAll('h3');

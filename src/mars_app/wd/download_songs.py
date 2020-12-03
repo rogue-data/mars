@@ -1,10 +1,11 @@
 from youtube_search import YoutubeSearch
 import pafy
 import os
- 
+  
 def download_song(name,artist):
     path=os.path.join(os.path.dirname(os.path.dirname(__file__)),'static/songs/')
     os.chdir(path)
+    print('d start')
     try:
         os.remove('0.mp3')
     except:
@@ -18,4 +19,5 @@ def download_song(name,artist):
     #renaming
     #print(f"Location: {os.listdir()}")
     os.rename((os.listdir())[0],"0.mp3")
+    print('d end')
 # download_song('Darkside')

@@ -134,13 +134,13 @@
       <!--End of Artist and Info-->
         </section>
 
-
         <section class="section2">
             <!--Second (Recommendation Page)-->
             <div class="second">
                 <div id="rec_head"><h1>Songs you may like</h1></div>
                 <a href="{% url 'song' %}?song_play={{rc.name.0}}+{{rc.artist.0}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
                 <div class="recommend_div recommend_div1" style="background: url({{rc.img.0}}); background-size: cover;">
+                    <!-- {% with ind=({{mode}}-1)*5+1 %}  -->
                     <div class="recommend"><div id="song_name">{{rc.name.0}}</div>
                     </div>
                     <div class="recommend_text">

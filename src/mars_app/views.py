@@ -15,7 +15,7 @@ def song_func(request,mode='default'):
     download_songs.download_song(song,crr['artist'])
     # print(crr.name)
     print(recommendations)
-    return render(request,'index.html',{'crr':crr,'rc':recommendations})
+    return render(request,'index.html',{'crr':crr,'rc':recommendations,'mode':mode})
 
 def welcome(request):
     return render(request,'welcome.html')

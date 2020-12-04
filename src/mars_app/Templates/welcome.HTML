@@ -159,7 +159,16 @@ nav{
   position: absolute;
   bottom: 10vh;
 }
-
+label{
+  cursor: pointer;
+  margin-right: 2vw;
+}
+#for_you,#peace,#work,#workout,#party{
+  display: none;
+}
+#for_you:checked label,#peace,#work,#workout,#party{
+  font-size: 2em;
+}
   </style>
 </head>
 <body>
@@ -250,26 +259,21 @@ nav{
         <form action="song">
           <!--Modes-->
           <nav>
-            <h3> For you
-            <label class="switch">
-            <input type="radio" checked name="mode" value="1" class="rad_switch">
-            </label>
-            Peace
-            <label class="switch">
-            <input type="radio" name="mode" value="2" class="rad_switch">
-            </label>
-            Work
-            <label class="switch">
-            <input type="radio" name="mode" value="3" class="rad_switch">
-            </label>
-            Party
-            <label class="switch">
-            <input type="radio" name="mode" value="4" class="rad_switch">
-            </label>
-            Workout
-            <label class="switch">
-            <input type="radio" name="mode" value="5" class="rad_switch">
-            </label>
+            <h3>
+            <label class="switch" for="for_you"> For you</label>
+            <input type="radio" id="for_you" checked name="mode" value="1" class="rad_switch">
+            
+            <label class="switch" for="peace">Peace</label>
+            <input type="radio" id="peace" name="mode" value="2" class="rad_switch">
+              
+            <label class="switch" for="work">Work</label>
+            <input type="radio" id="work" name="mode" value="3" class="rad_switch">
+            
+            <label class="switch" for="party">Party</label>
+            <input type="radio" id="party" name="mode" value="4" class="rad_switch">
+          
+            <label class="switch" for="workout">Workout</label>
+            <input type="radio" id="workout" name="mode" value="5" class="rad_switch">
             </nav>
             <!--Modes-->
             <!--Search Bar-->
@@ -302,5 +306,11 @@ nav{
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+  $('#carousel-example-2').carousel({
+    interval: 5000,
+    wrap: false
+  });
+</script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="{% static './fps/app/assets/stylesheet/full-page-scroll.css' %}" >
 </head>
-<body onload="change_bg()">
+<body onload="change_bg_init()">
     <!--Navbar-->
     <div class="feature">
         <form action="song">  
@@ -27,27 +27,27 @@
         <h1 id="modes"> Mode</h1>
         <h3> For you</h3>
         <label class="switch">
-        <input type="radio" checked name="mode" value="1" onclick="change_bg()" class="rad_switch">
+        <input type="radio" id="for_you" checked name="mode" value="1" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
         </label>
         <h3> Peace</h3>
         <label class="switch">
-        <input type="radio" name="mode" value="2" onclick="change_bg()" class="rad_switch">
+        <input type="radio" name="mode" id="peace" value="2" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
         </label> 
         <h3> Work</h3>
         <label class="switch">
-        <input type="radio" name="mode" value="3" onclick="change_bg()" class="rad_switch">
+        <input type="radio" name="mode" value="3" id="work" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
         </label> 
         <h3> Party</h3>
         <label class="switch">
-        <input type="radio" name="mode" value="4" onclick="change_bg()" class="rad_switch">
+        <input type="radio" name="mode" value="4" id="party" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
         </label> 
         <h3> Workout</h3>
         <label class="switch">
-        <input type="radio" name="mode" value="5" onclick="change_bg()" class="rad_switch">
+        <input type="radio" name="mode" value="5" id="workout" onclick="change_bg()" class="rad_switch">
         <span class="slider round"></span>
         </label>
         </nav>
@@ -457,9 +457,8 @@
     initPlayer();
 });
 /* End of Music Player */
-var chx='1';
 
-function change_rec(){
+function change_rec(chx){
     var data =JSON.parse("{{dt|escapejs}}");
     var dta=JSON.parse(data);
     var mod=Number(chx);
@@ -477,7 +476,49 @@ function change_rec(){
 }
 
 /* Changing Background Image */
-
+var chx='1';
+function change_bg_init(){
+    var bd_img=document.querySelector('body');
+    var md='{{mode}}';
+    md=md/5;
+    md+=1;
+    if(md==1){
+        chx='1';
+        bd_img.style.background="url(\"{%static './images/mohamed-nohassi-odxB5oIG_iA-unsplash.jpg'%}\") no-repeat";
+        bd_img.style.backgroundSize="100%";
+        change_rec(chx);
+        document.getElementById("for_you").checked = true;        
+    }
+    else if(md==2){
+        chx='2';        
+        bd_img.style.background="url(\"{%static './images/peace4.jpg'%}\") no-repeat";
+        bd_img.style.backgroundSize="100%";
+        change_rec(chx);
+        document.getElementById("peace").checked = true;
+    }
+    else if(md==3){
+        chx='3';
+        bd_img.style.background="url(\"{%static './images/work3.jpg'%}\") no-repeat";
+        bd_img.style.backgroundSize="100%";
+        change_rec(chx);
+        document.getElementById("work").checked = true;
+    }
+    else if(md==4){
+        chx='4';
+        bd_img.style.background="url(\"{%static './images/party2.jpg'%}\") no-repeat";
+        bd_img.style.backgroundSize="100%";
+        change_rec(chx);
+        document.getElementById("party").checked = true;
+    }
+    else if(md==5){
+        chx='5';
+    
+        bd_img.style.background="url(\"{%static './images/workout.jpg'%}\") no-repeat";
+        bd_img.style.backgroundSize="100%";
+        change_rec(chx);
+        document.getElementById("workout").checked = true;
+    }
+}
 function change_bg(){
     var bd_img=document.querySelector('body');
     var sw=document.querySelectorAll('.rad_switch');
@@ -487,12 +528,6 @@ function change_bg(){
             chx='1';
             bd_img.style.background="url(\"{%static './images/mohamed-nohassi-odxB5oIG_iA-unsplash.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
-            var font_mode=document.querySelectorAll('h3');
-            var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(0,0,0)";
-            font_mode.forEach(y => {
-                y.style.color="rgb(0,0,0)";
-            })
             /* changing recs */
             // console.log(typeof(data));
             // console.log(dta);
@@ -502,56 +537,30 @@ function change_bg(){
             // console.log(typeof(dta.name));
             // console.log(dta['name']);
             // var mod='{{mode}}';
-            change_rec();            
+            
         }
         else if(x.value=='2'){
             chx='2';
             bd_img.style.background="url(\"{%static './images/peace4.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
-            var font_mode=document.querySelectorAll('h3');
-            var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(0,0,0)";
-            font_mode.forEach(y => {
-                y.style.color="rgb(0,0,0)";
-            })
-            change_rec();
+            
         }
         else if(x.value=='3'){
             chx='3';
             bd_img.style.background="url(\"{%static './images/work3.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
-            var font_mode=document.querySelectorAll('h3');
-            var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(0,0,0)";
-            font_mode.forEach(y => {
-                y.style.color="rgb(0,0,0)";
-            })
-            change_rec();
         }
         else if(x.value=='4'){
             chx='4';
             bd_img.style.background="url(\"{%static './images/party2.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
-            var font_mode=document.querySelectorAll('h3');
-            var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(0,0,0)";
-            font_mode.forEach(y => {
-                y.style.color="rgb(0,0,0)";
-            })
-            change_rec();
         }
         else if(x.value=='5'){
             chx='5';
             bd_img.style.background="url(\"{%static './images/workout.jpg'%}\") no-repeat";
             bd_img.style.backgroundSize="100%";
-            var font_mode=document.querySelectorAll('h3');
-            var mode_col=document.querySelector("#modes");
-            mode_col.style.color="rgb(0,0,0)";
-            font_mode.forEach(y => {
-                y.style.color="rgb(0,0,0)";
-            })
-            change_rec();
         }
+        change_rec(chx);
             }
         }
     );

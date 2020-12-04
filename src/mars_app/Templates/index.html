@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link rel="stylesheet" type="text/css" href="{% static './fps/app/assets/stylesheet/full-page-scroll.css' %}" >
 </head>
-<body>
+<body onload="change_bg()">
     <!--Navbar-->
     <div class="feature">
         <form action="song">  
@@ -138,49 +138,35 @@
             <!--Second (Recommendation Page)-->
             <div class="second">
                 <div id="rec_head"><h1>Songs you may like</h1></div>
-                <a href="{% url 'song' %}?song_play={{rc.name.0}}+{{rc.artist.0}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
-                <div class="recommend_div recommend_div1" style="background: url({{rc.img.0}}); background-size: cover;">
-                    <!-- {% with ind=({{mode}}-1)*5+1 %}  -->
-                    <div class="recommend"><div id="song_name">{{rc.name.0}}</div>
+                <a href="{% url 'song' %}?song_play={{rc.name.1}}+{{rc.artist.1}}&mode=1">
+                <div class="recommend_div recommend_div1" style="background: url({{rc.img.1}}); background-size: cover;">
+                    <div class="recommend"><div class="song_name">{{rc.name.1}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Tum Hi Ho<br> -->
-                            Artist: {{rc.artist.0}}<br>
-                            Year: {{rc.year.0}}<br>
+                            Artist: {{rc.artist.1}}<br>
+                            Year: {{rc.year.1}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.1}}+{{rc.artist.1}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
-                <div class="recommend_div recommend_div2" style="background: url({{rc.img.1}}); background-size: cover;">
-                    <div class="recommend"><div id="song_name">{{rc.name.1}}</div>
+                <a href="{% url 'song' %}?song_play={{rc.name.2}}+{{rc.artist.2}}&mode=1">
+                <div class="recommend_div recommend_div2" style="background: url({{rc.img.2}}); background-size: cover;">
+                    <div class="recommend"><div class="song_name">{{rc.name.2}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--   Song Name: Samjhawan<br> -->
-                        Artist: {{rc.artist.1}}<br>
-                        Year: {{rc.year.1}}<br>
-                        </p></div>
-                    </div>
-                </div>
-                </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.2}}+{{rc.artist.2}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
-                <div class="recommend_div recommend_div3" style="background: url({{rc.img.2}}); background-size: cover;">
-                    <div class="recommend"><div id="song_name">{{rc.name.2}}</div>
-                    </div>
-                    <div class="recommend_text">
-                        <div class='text'><p>
-                        <!--  Song Name: Shaayad<br> -->
                         Artist: {{rc.artist.2}}<br>
                         Year: {{rc.year.2}}<br>
                         </p></div>
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.3}}+{{rc.artist.3}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
-                <div class="recommend_div recommend_div4" style="background: url({{rc.img.3}}); background-size: cover;">
-                    <div class="recommend"><div id="song_name">{{rc.name.3}}</div>
+                <a href="{% url 'song' %}?song_play={{rc.name.3}}+{{rc.artist.3}}&mode=1">
+                <div class="recommend_div recommend_div3" style="background: url({{rc.img.3}}); background-size: cover;">
+                    <div class="recommend"><div class="song_name">{{rc.name.3}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
@@ -191,15 +177,28 @@
                     </div>
                 </div>
                 </a>
-                <a href="{% url 'song' %}?song_play={{rc.name.4}}+{{rc.artist.4}}" onclick = "location.href=this.href+'&mode='+chx;return false;">
-                <div class="recommend_div recommend_div5" style="background: url({{rc.img.4}}); background-size: cover;">
-                    <div class="recommend"><div id="song_name">{{rc.name.4}}</div>
+                <a href="{% url 'song' %}?song_play={{rc.name.4}}+{{rc.artist.4}}&mode=1" >
+                <div class="recommend_div recommend_div4" style="background: url({{rc.img.4}}); background-size: cover;">
+                    <div class="recommend"><div class="song_name">{{rc.name.4}}</div>
                     </div>
                     <div class="recommend_text">
                         <div class='text'><p>
                         <!--  Song Name: Shaayad<br> -->
                         Artist: {{rc.artist.4}}<br>
                         Year: {{rc.year.4}}<br>
+                        </p></div>
+                    </div>
+                </div>
+                </a>
+                <a href="{% url 'song' %}?song_play={{rc.name.5}}+{{rc.artist.5}}&mode=1">
+                <div class="recommend_div recommend_div5" style="background: url({{rc.img.5}}); background-size: cover;">
+                    <div class="recommend"><div class="song_name">{{rc.name.5}}</div>
+                    </div>
+                    <div class="recommend_text">
+                        <div class='text'><p>
+                        <!--  Song Name: Shaayad<br> -->
+                        Artist: {{rc.artist.5}}<br>
+                        Year: {{rc.year.5}}<br>
                         </p></div>
                     </div>
                 </div>
@@ -225,8 +224,9 @@
 <script>/*Music Player*/ 
     
     $(function()
-{
-    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, trackNames = ['{{crr.name}}'],albums=['Explicitly for You'] ,albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v=1"], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+{   
+    var versionUpdate = (new Date()).getTime();
+    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, trackNames = ['{{crr.name}}'],albums=['Explicitly for You'] ,albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v="+versionUpdate], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     function playPause()
     {
@@ -458,6 +458,24 @@
 });
 /* End of Music Player */
 var chx='1';
+
+function change_rec(){
+    var data =JSON.parse("{{dt|escapejs}}");
+    var dta=JSON.parse(data);
+    var mod=Number(chx);
+    mod=(mod-1)*5;
+    for(i=1;i<=5;i++)
+    {   
+        var my=mod+i;
+        // console.log(my);
+        // console.log((dta.name)[my]);
+        document.getElementsByClassName('recommend_div'+i.toString())[0].getElementsByClassName('recommend')[0].getElementsByClassName('song_name')[0].innerHTML=(dta.name)[my];
+        document.getElementsByClassName('recommend_div'+i.toString())[0].getElementsByClassName('recommend_text')[0].getElementsByClassName('text')[0].getElementsByTagName('p')[0].innerHTML='Artist: '+(dta.artist)[my]+'<br>Year: '+(dta.year)[my]+'<br>';                
+        document.getElementsByClassName('recommend_div'+i.toString())[0].style['background']="url("+(dta.img)[my]+")";
+        document.getElementsByClassName('second')[0].getElementsByTagName('a')[i-1].href="{% url 'song' %}?song_play="+(dta.name)[my]+" "+(dta.artist)[my]+"&mode="+chx;
+    }
+}
+
 /* Changing Background Image */
 
 function change_bg(){
@@ -475,6 +493,16 @@ function change_bg(){
             font_mode.forEach(y => {
                 y.style.color="rgb(0,0,0)";
             })
+            /* changing recs */
+            // console.log(typeof(data));
+            // console.log(dta);
+            // console.log(typeof(dta)); 
+            // console.log(dta['name']);
+            // console.log((dta.name)[1]);
+            // console.log(typeof(dta.name));
+            // console.log(dta['name']);
+            // var mod='{{mode}}';
+            change_rec();            
         }
         else if(x.value=='2'){
             chx='2';
@@ -486,6 +514,7 @@ function change_bg(){
             font_mode.forEach(y => {
                 y.style.color="rgb(0,0,0)";
             })
+            change_rec();
         }
         else if(x.value=='3'){
             chx='3';
@@ -497,6 +526,7 @@ function change_bg(){
             font_mode.forEach(y => {
                 y.style.color="rgb(0,0,0)";
             })
+            change_rec();
         }
         else if(x.value=='4'){
             chx='4';
@@ -508,6 +538,7 @@ function change_bg(){
             font_mode.forEach(y => {
                 y.style.color="rgb(0,0,0)";
             })
+            change_rec();
         }
         else if(x.value=='5'){
             chx='5';
@@ -519,9 +550,8 @@ function change_bg(){
             font_mode.forEach(y => {
                 y.style.color="rgb(0,0,0)";
             })
+            change_rec();
         }
-
-
             }
         }
     );

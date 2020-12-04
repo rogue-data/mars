@@ -637,6 +637,15 @@ h3{
     font-weight: bold;
     margin:auto;
 }
+.song_name{
+    /* position: absolute; */
+    /* left: 5vw; */
+    top: 1vw;
+    color: #1f1f1f;
+    text-align: center;
+    font-weight: bold;
+    margin:auto;
+}
 .text{
     position: absolute;
     left: 2%;

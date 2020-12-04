@@ -26,7 +26,7 @@ SECRET_KEY = 'n6=jxq-2@705m_c*gb-7l$38c(r7p49z23kt@9)n4en9@u-33$'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = ['marsrd.pythonanywhere.com']
 
 # Application definition
 

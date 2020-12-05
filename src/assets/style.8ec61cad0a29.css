@@ -1,0 +1,670 @@
+@font-face{
+    font-family: fon1;
+    src:url("./fonts/Comfortaa-Regular.c2488bfda16e.ttf");
+}
+@font-face{
+    font-family: fon2;
+    src:url("./fonts/NanumGothic-Regular.3cbe9257e888.ttf");
+}
+@font-face{
+    font-family: fon3;
+    src:url("./fonts/OpenSans-Regular.3ed9575dcc48.ttf");
+}
+@font-face{
+    font-family: fon4;
+    src:url("./fonts/Comfortaa-Medium.1c593a568b34.ttf");
+}
+
+*{
+    box-sizing: border-box;
+}
+body{
+    background: url("./images/mohamed-nohassi-odxB5oIG_iA-unsplash.08d9579a89c7.jpg") no-repeat;
+    background-size: 100%;
+    margin: 0;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    font-family: fon1;
+}
+.feature{
+    width: 10vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(175, 183, 193, 0.5);
+    z-index: 3;
+}
+/*navigation*/
+  nav {
+    padding-top: 5vh;
+    margin-left: 2vw;
+    padding-bottom: 5vh;
+    
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+.switch{
+    margin-top: 2vh;
+}
+h3{
+    margin-bottom: 0;
+    columns: #111111;;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#modes{
+    color: #111111;
+    margin-left: -2vw;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+  @media (max-width: 600px) {
+    section {
+      -webkit-flex-direction: column;
+      flex-direction: column;
+    }
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fd6d94;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    /* left: 5px; */
+    /* bottom: 4px; */
+    background-color:#ffe8ee;
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+  
+  input:checked + .slider {
+    background-color: #6ec6d1;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #6ec6d1;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(40px);
+    -ms-transform: translateX(40px);
+    transform: translateX(40px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+/*End of navbar*/
+
+  *:focus
+  {
+      outline: none;
+  }
+
+  
+
+  /*Player*/
+
+  #app-cover
+{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    left: 10%;
+    width: 50%;
+    height: 100px;
+    margin: -4px auto;
+}
+
+
+#player
+{
+    position: relative;
+    height: 100%;
+    z-index: 3;
+}
+
+#player-track
+{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    left: 15px;
+    padding: 15px 22px 10px 184px;
+    background-color: #fff7f7;
+    border-radius: 15px 15px 0 0;
+    transition: 0.3s ease top;
+    z-index: 1;
+}
+
+#player-track.active
+{
+    top: -92px;
+}
+
+#album-name
+{
+    color: #54576f;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#track-name
+{
+    color: #acaebd;
+    font-size: 13px;
+    margin: 2px 0 13px 0;
+}
+
+#track-time
+{
+    height: 12px;
+    margin-bottom: 3px;
+    overflow: hidden;
+}
+
+#current-time
+{
+    float: left;
+}
+
+#track-length
+{
+    float: right;
+}
+
+#current-time, #track-length
+{
+    color: transparent;
+    font-size: 11px;
+    background-color: #ffe8ee;
+    border-radius: 10px;
+    transition: 0.3s ease all;
+}
+
+#track-time.active #current-time, #track-time.active #track-length
+{
+    color: #f86d92;
+    background-color: transparent;
+}
+
+#s-area, #seek-bar
+{
+    position: relative;
+    height: 4px;
+    border-radius: 4px;
+}
+
+#s-area
+{
+    background-color:#ffe8ee;
+    cursor: pointer;
+}
+
+#ins-time
+{
+    position: absolute;
+    top: -29px;
+    color: #fff;
+    font-size: 12px;
+    white-space: pre;
+    padding: 5px 6px;
+    border-radius: 4px;
+    display:none;
+}
+
+#s-hover
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+#ins-time, #s-hover
+{
+    background-color: #3b3d50;
+}
+
+#seek-bar
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: #fd6d94;
+    transition: 0.2s ease width;
+    z-index: 1;
+}
+
+#player-content
+{
+    position: relative;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 0 30px 80px #656565;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+#album-art
+{
+    position: absolute;
+    top: -40px;
+    width: 115px;
+    height: 115px;
+    margin-left: 40px;
+    transform: rotateZ(0);
+    transition: 0.3s ease all;
+    box-shadow: 0 0 0 10px #fff;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#album-art.active
+{
+    top: -60px;
+    box-shadow: 0 0 0 4px #fff7f7, 0 30px 50px -15px #afb7c1;
+}
+
+#album-art:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    margin: -10px auto 0 auto;
+    background-color: #d6dee7;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px #fff;
+    z-index: 2;
+}
+
+#album-art img
+{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+#album-art img.active
+{
+    opacity: 1;
+    z-index: 1;
+}
+
+#album-art.active img.active
+{
+    z-index: 1;
+    animation: rotateAlbumArt 3s linear 0s infinite forwards;
+}
+
+@keyframes rotateAlbumArt
+{
+    0%{ transform: rotateZ(0); }
+    100%{ transform: rotateZ(360deg); }
+}
+
+#buffer-box
+{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 13px;
+    color: #1f1f1f;
+    font-size: 13px;
+    font-family: Helvetica;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    padding: 6px;
+    margin: -12px auto 0 auto;
+    background-color: rgba(255, 255, 255, 0.19);
+    opacity: 0;
+    z-index: 2;
+}
+
+#album-art img, #buffer-box
+{
+    transition: 0.1s linear all;
+}
+
+#album-art.buffering img
+{
+    opacity: 0.25;
+}
+
+#album-art.buffering img.active
+{
+    opacity: 0.8;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+#album-art.buffering #buffer-box
+{
+    opacity: 1;
+}
+
+#player-controls
+{
+    width: 250px;
+    height: 100%;
+    margin: 0 5px 0 141px;
+    float: right;
+    overflow: hidden;
+}
+
+.control
+{
+    width: 33.333%;
+    float: left;
+    padding: 12px 0;
+}
+
+.button
+{
+    width: 26px;
+    height: 26px;
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button i
+{
+    display: block;
+    color: #3b3d50;
+    font-size: 26px;
+    text-align: center;
+    line-height: 1;
+}
+
+.button, .button i
+{
+    transition: 0.2s ease all;
+}
+
+
+.button:hover i
+{
+    color: maroon;
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #ae5f87;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(174, 95, 135, 0.86);
+  z-index: 125;
+}
+
+  /*End of player*/
+
+  /*Artist and song info*/
+.song_{
+    position: absolute;
+    top: 20vh;
+    bottom: 20vh;
+    left: 30vw;
+    width: 50vw;
+    height: 50vh;
+}
+#song_img{
+    position: absolute;
+    left: 0;
+    /* background: url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    border-radius: 100%;
+    background-size: auto;
+    width: 40%;
+    height: 80%;
+}
+#song_info{
+    position: absolute;
+    right: 0;
+    border-radius: 100%;
+    background-color: rgba(175, 183, 193, 0.5);
+    width: 40%;
+    height: 80%;
+}
+.info_{
+    position: absolute;
+    top: 9vh;
+    /* left: 5vw; */
+    text-align: center;
+    width:100%;
+}
+  /*End of Artist and song info*/
+  .section{
+      display: block;
+  }
+  .section1{
+      height: 100%;
+  }
+  .section2{
+      height:100%;
+
+  }
+/*Second Page*/
+.second{
+    width: 100vw;
+    height: 100%;
+    /* margin-top: -100px; */
+    /* height: 250vh; */
+}
+/*End of Second page*/
+/*Sticky Player*/
+.play{
+    position: fixed;
+    bottom: 18vh;
+    width: 100vw;
+    z-index: 3;
+}
+.nav{
+    position: fixed;
+    height: 100vh;
+}
+/*End of Sticky Player*/
+
+/* search box*/
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+  left: -5vw;
+}
+
+.searchTerm {
+  width: 100%;
+  border: none;
+  background-color: #fff;
+  padding: 14px;
+  height: 45px;
+  font-size: large;
+  text-align: center;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.searchTerm:focus{
+  color: #000;
+}
+
+.searchButton {
+  width: 80px;
+  height: 45px;
+  border: none;
+  background: #fff;
+  text-align: center;
+  color: #1f1f1f;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.searchbar{
+  width: 50vw;
+  position: absolute;
+  top: 10%;
+  left: 60vw;
+  transform: translate(-50%, -50%);
+}
+
+/*End of Search bar*/
+/* Recommendations */
+#rec_head{
+    position: absolute;
+    top: 105vh;
+    left: 46vw;
+    z-index: 2;
+    color: #ffe8ee;
+}
+.recommend_div{
+    width: 15vw;
+    height: 40vh;
+    position: absolute;
+    top: 120vh;
+    border-radius: 5%;
+}
+.recommend_div1{
+    /* background:url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    /* background-size: cover; */
+    /* margin-left: 15%; */
+    left: 12vw;
+}
+.recommend_div2{
+    /* background:url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    /* background-size: cover; */
+    left: 29vw;
+}
+.recommend_div3{
+    /* background:url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    /* background-size: cover; */
+    left: 46vw;
+}
+.recommend_div4{
+    /* background:url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    /* background-size: cover; */
+    left: 63vw;
+}
+.recommend_div5{
+    /* background:url("./images/664072-arijit-singh.8fe85d2eba4f.jpg"); */
+    /* background-size: cover; */
+    left: 80vw;
+}
+.recommend_text{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0);
+    height: 10vh;
+    width: 15vw;
+    top: 33.1vh;
+}
+.recommend{
+    background-color: rgb(210, 210, 210);
+    position: absolute;
+    height: 13vh;
+    width: 15vw;
+    top: 33.1vh;
+    /* text-align:center; */
+    display: flex;
+    border-radius: 0% 0% 5% 5%;
+}
+#song_name{
+    /* position: absolute; */
+    /* left: 5vw; */
+    top: 1vw;
+    color: #1f1f1f;
+    text-align: center;
+    font-weight: bold;
+    margin:auto;
+}
+.song_name{
+    /* position: absolute; */
+    /* left: 5vw; */
+    top: 1vw;
+    color: #1f1f1f;
+    text-align: center;
+    font-weight: bold;
+    margin:auto;
+}
+.text{
+    position: absolute;
+    left: 2%;
+    color: black;
+    padding-left: 10px;
+    font-weight: bold;
+    opacity: 0;
+}
+.text p{
+    margin-bottom: 0;
+}
+.recommend_div1:hover .recommend_text,.recommend_div2:hover .recommend_text,.recommend_div3:hover .recommend_text,.recommend_div4:hover .recommend_text,.recommend_div5:hover .recommend_text{
+    transform: translateY(-99%);
+    transition-duration: 0.5s;
+    background-color: rgba(210, 210, 210, 0.9);
+    transition-duration: 0.5s;
+}
+.recommend_div1:hover .text,.recommend_div2:hover .text,.recommend_div3:hover .text,.recommend_div4:hover .text,.recommend_div5:hover .text{
+    opacity: 1;
+    transition-duration: 0.5s;
+}
+/* End of Recommendations */

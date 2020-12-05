@@ -7,7 +7,7 @@ def getTrackFeatures(id,sp):
 
     # meta
     name = meta['name']
-    # album = meta['album']['name']
+    album = meta['album']['name']
     artists = meta['album']['artists'][0]['name']
     # release_date = meta['album']['release_date']
     duration_ms = meta['duration_ms']
@@ -34,7 +34,7 @@ def getTrackFeatures(id,sp):
              mode, name, popularity, speechiness, tempo,
              valence, year]
     print('api end')
-    return track, image_url , name , artists ,year
+    return track, image_url , name , artists ,year, album
 
 def getTracksFeatures(ids,sp):
     print('api start')

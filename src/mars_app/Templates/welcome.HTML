@@ -7,8 +7,8 @@
   <title>Welcome to M.A.R.s</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
-  <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto Sans JP">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans JP">
 
   <style type="text/css">
     .carousel-caption{
@@ -41,35 +41,14 @@ color:white;
   top:10vh;
 
 }
-.about1{
-  text-align:center;
+.about{
   position: absolute;
-  top:25vh;
-  left: 20vw;
-  width:15%; 
-
-  background-color:rgba(255,255,255,0.7);
-}
-.about2{
-  text-align:center; 
- position: absolute;
-  top:25vh;
-  left: 40vw;
-  width:15%; 
-  
-  background-color:rgba(255,255,255,0.7); 
-}
-.about3{
-  text-align:center;
-  position: absolute;
-  top:25vh;
-  left: 60vw;
-  width:15%; 
- 
-  background-color:rgba(255,255,255,0.7);
-}
-summary{
-  text-align:center;
+  top: 25vh;
+  width: 50vw;
+  height: 25vh;
+  left: 25vw;
+  right: 25vw;
+  background-color: white;
 }
 
 .p3{
@@ -163,11 +142,12 @@ label{
   cursor: pointer;
   margin-right: 2vw;
 }
-#for_you,#peace,#work,#workout,#party{
+input[type="radio"]{
   display: none;
 }
-#for_you:checked label,#peace,#work,#workout,#party{
-  font-size: 2em;
+input[type="radio"]:checked+label{
+  font-weight: bold;
+  text-shadow: 0 0 10px white;
 }
   </style>
 </head>
@@ -210,39 +190,42 @@ label{
     <div class="page2-2">
       <h1 class="pag2">INHABITANTS OF M.A.R.S</h1>
     </div>
+    <div class="about">
       <div class="about1"> 
-       <details >
-      <summary>SAGAR</summary>
-      <UL style="list-style: none;">
-        <li><a href="https://www.linkedin.com/in/sagar-sk/" class="fa fa-linkedin-square" style="font-size:36px"></i></a> </li>
-        <li><a href="https://github.com/Sagar-Kumar-007"><i class="fa fa-github" style="font-size:36px"></i></a></li>
-      <li><a href="https://www.instagram.com/sagar_sk14/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
-      </UL>
+        <!-- <details >
+       <summary>SAGAR</summary>
+       <UL style="list-style: none;">
+         <li><a href="https://www.linkedin.com/in/sagar-sk/" class="fa fa-linkedin-square" style="font-size:36px"></i></a> </li>
+         <li><a href="https://github.com/Sagar-Kumar-007"><i class="fa fa-github" style="font-size:36px"></i></a></li>
+       <li><a href="https://www.instagram.com/sagar_sk14/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
+       </UL>
+ 
+        </details> -->
+      </div>
+       <div class="about2"> 
+        <!-- <details >
+       <summary>DANISH</summary>
+       <UL style="list-style: none;">
+         <li><a href="https://www.linkedin.com/in/danish-gupta-561457199"><i class="fa fa-linkedin-square" style="font-size:36px;"></i></a> </li>
+         <li><a href="https://github.com/danish1207"><i class="fa fa-github" style="font-size:36px"></i></a></li>
+       <li><a href="https://www.instagram.com/danishgupta1207/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
+       </UL>
+        </details> -->
+      </div>
+ 
+     <div class="about3"> 
+        <!-- <details >
+       <summary>SHIVANSH</summary>
+       <UL style="list-style: none;">
+         <li><a href="https://www.linkedin.com/in/sagar-sk/"><i class="fa fa-linkedin-square" style="font-size:36px;"></i></a> </li>
+         <li><a href="https://github.com/Sagar-Kumar-007"><i class="fa fa-github" style="font-size:36px"></i></a></li>
+       <li><a href="https://www.instagram.com/sagar_sk14/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
+       </UL>
+ 
+        </details> -->
+      </div>
+    </div>
 
-       </details>
-     </div>
-      <div class="about2"> 
-       <details >
-      <summary>DANISH</summary>
-      <UL style="list-style: none;">
-        <li><a href="https://www.linkedin.com/in/danish-gupta-561457199"><i class="fa fa-linkedin-square" style="font-size:36px;"></i></a> </li>
-        <li><a href="https://github.com/danish1207"><i class="fa fa-github" style="font-size:36px"></i></a></li>
-      <li><a href="https://www.instagram.com/danishgupta1207/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
-      </UL>
-       </details>
-     </div>
-
-    <div class="about3"> 
-       <details >
-      <summary>SHIVANSH</summary>
-      <UL style="list-style: none;">
-        <li><a href="https://www.linkedin.com/in/sagar-sk/"><i class="fa fa-linkedin-square" style="font-size:36px;"></i></a> </li>
-        <li><a href="https://github.com/Sagar-Kumar-007"><i class="fa fa-github" style="font-size:36px"></i></a></li>
-      <li><a href="https://www.instagram.com/sagar_sk14/"><i class="fa fa-instagram" style="font-size:36px"></i></a></li>
-      </UL>
-
-       </details>
-     </div>
       
   </div>
     <div class="carousel-item">
@@ -260,21 +243,26 @@ label{
           <!--Modes-->
           <nav>
             <h3>
-            <label class="switch" for="for_you"> For you</label>
+            
             <input type="radio" id="for_you" checked name="mode" value="1" class="rad_switch">
+            <label class="switch" for="for_you">For you</label>
+
             
-            <label class="switch" for="peace">Peace</label>
             <input type="radio" id="peace" name="mode" value="2" class="rad_switch">
-              
-            <label class="switch" for="work">Work</label>
-            <input type="radio" id="work" name="mode" value="3" class="rad_switch">
+            <label class="switch" for="peace">Peace</label>
             
-            <label class="switch" for="party">Party</label>
+            
+            <input type="radio" id="work" name="mode" value="3" class="rad_switch">
+            <label class="switch" for="work">Work</label>
+
+            
             <input type="radio" id="party" name="mode" value="4" class="rad_switch">
-          
-            <label class="switch" for="workout">Workout</label>
+            <label class="switch" for="party">Party</label>
+
+            
             <input type="radio" id="workout" name="mode" value="5" class="rad_switch">
-            </nav>
+            <label class="switch" for="workout">Workout</label>
+          </nav>
             <!--Modes-->
             <!--Search Bar-->
       <div class="searchbar">

@@ -14,7 +14,7 @@ def song_func(request,mode='default'):
     print(song)
     crr,recommendations=recommend_songs.recommend_songs(song,modes_list[mode])
     # Download song
-    download_songs.download_song(song,crr['artist'])
+    download_songs.download_song(song,crr['album'])
     # print(crr.name)
     # print(recommendations)
     # dataJSON = dumps(recommendations) 

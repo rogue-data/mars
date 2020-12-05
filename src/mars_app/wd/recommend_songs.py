@@ -17,7 +17,7 @@ def recommend_songs(song,mode='default'):
     print('st start')
     df = pd.read_csv(path)
     df.loc[len(df)] = track[0]
-    current_song={'name':track[2],'artist':track[3],'img':track[1],'year':track[4]}
+    current_song={'name':track[2],'artist':track[3],'img':track[1],'year':track[4],'album':track[5]}
     # current_song=pd.DataFrame(current_song)
     # Sort by year
     df = df.sort_values(by='year')

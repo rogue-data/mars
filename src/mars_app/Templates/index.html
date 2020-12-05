@@ -79,6 +79,11 @@
                 <div id="album-art">
                     <!-- Insert Images Here-->
                     <img src="{{crr.img}}" class="active" id="_1">
+                    <img src="{{crr.img}}" class="active" id="_2">
+                    <img src="{{crr.img}}" class="active" id="_3">
+                    <img src="{{crr.img}}" class="active" id="_4">
+                    <img src="{{crr.img}}" class="active" id="_5">
+                    <img src="{{crr.img}}" class="active" id="_6">                                            
                     <div id="buffer-box">Buffering ...</div>
                 </div>
                 <div id="player-controls">
@@ -217,11 +222,31 @@
   </script>
 <!-- <script src="{% static 'script.js' %}"></script> -->
 <script>/*Music Player*/ 
-    
+    function loaddata(){
+        var data =JSON.parse("{{dt|escapejs}}");
+        var dta=JSON.parse(data);
+        return dta;
+    }
+    function loadmod(){
+        var mod=Number(chx);
+        return mod;
+    }
     $(function()
 {   
     var versionUpdate = (new Date()).getTime();
-    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, trackNames = ['{{crr.name}}'],albums=['Explicitly for You'] ,albumArtworks = ['_1'], trackUrl = ["{% static './songs/0.mp3' %}?v="+versionUpdate], playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
+    dta=loaddata();
+    mod=loadmod();
+    var md=Number('{{mode}}');
+    // console.log('{{csu.0|escapejs}}');
+    var trackUrl=['{{csu.0|escapejs}}','{{csu.1|escapejs}}','{{csu.2|escapejs}}','{{csu.3|escapejs}}','{{csu.4|escapejs}}','{{csu.5|escapejs}}'];
+    var trackNames = ['{{crr.name}}',(dta.name)[md+1],(dta.name)[md+2],(dta.name)[md+3],(dta.name)[md+4],(dta.name)[md+5] ];
+    var albums=['Explicitly for You','Explicitly for You','Explicitly for You','Explicitly for You','Explicitly for You','Explicitly for You'] ;
+    var albumArtworks = ['_1','_2','_3','_4','_5','_6'];
+    for(i=1;i<=5;i++)
+    {
+        document.getElementsByClassName('active')[i].src=(dta.img)[md+i];
+    }
+    var playerTrack = $("#player-track"), bgArtwork = $('#bg-artwork'), bgArtworkUrl, albumName = $('#album-name'), trackName = $('#track-name'), albumArt = $('#album-art'), sArea = $('#s-area'), seekBar = $('#seek-bar'), trackTime = $('#track-time'), insTime = $('#ins-time'), sHover = $('#s-hover'), playPauseButton = $("#play-pause-button"),  i = playPauseButton.find('i'), tProgress = $('#current-time'), tTime = $('#track-length'), seekT, seekLoc, seekBarPos, cM, ctMinutes, ctSeconds, curMinutes, curSeconds, durMinutes, durSeconds, playProgress, bTime, nTime = 0, buffInterval = null, tFlag = false, playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     function playPause()
     {
@@ -430,7 +455,7 @@
     function initPlayer()
     {	
         audio = new Audio();
-
+        // console.log('{{csu}}');
         selectTrack(0);
         
         audio.loop = false;
@@ -454,13 +479,14 @@
 /* End of Music Player */
 
 function change_rec(chx){
-    var data =JSON.parse("{{dt|escapejs}}");
-    var dta=JSON.parse(data);
-    var mod=Number(chx);
-    mod=(mod-1)*5;
+    mod=loadmod();
+    dta=loaddata();
+    var md=(mod-1)*5;
+    // console.log((dta.img)[0]);
+    // console.log('{{fak|escapejs}}');
     for(i=1;i<=5;i++)
     {   
-        var my=mod+i;
+        var my=md+i;
         // console.log(my);
         // console.log((dta.name)[my]);
         document.getElementsByClassName('recommend_div'+i.toString())[0].getElementsByClassName('recommend')[0].getElementsByClassName('song_name')[0].innerHTML=(dta.name)[my];
@@ -532,7 +558,6 @@ function change_bg(){
             // console.log(typeof(dta.name));
             // console.log(dta['name']);
             // var mod='{{mode}}';
-            
         }
         else if(x.value=='2'){
             chx='2';

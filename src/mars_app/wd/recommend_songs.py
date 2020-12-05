@@ -30,7 +30,7 @@ def recommend_songs(song,mode='default'):
     #return cs_model.recommend_cosine(df,mody) , track[1]
     recommended_song_ids=cs_model.recommend_cosine(df,mody)
     #print(recommended_song_ids)
-    recommended=pd.DataFrame(columns=['name','img','artist','year'])
+    recommended=pd.DataFrame(columns=['name','img','artist','year','album'])
     recommended=recommended.append(current_song,ignore_index=True)
     # for id in recommended_song_ids:
     #     # print(f"id: {id}")
@@ -39,7 +39,7 @@ def recommend_songs(song,mode='default'):
     
     tracke=get_features.getTracksFeatures(recommended_song_ids,sp)
     for i in range(0,25):
-        recommended=recommended.append({'name':tracke['tracks'][i]['name'],'artist':tracke['tracks'][i]['album']['artists'][0]['name'],'img':(tracke['tracks'][i]['album']['images'][0])['url'],'year':int(tracke['tracks'][i]['album']['release_date'][:4])},ignore_index=True)
+        recommended=recommended.append({'name':tracke['tracks'][i]['name'],'artist':tracke['tracks'][i]['album']['artists'][0]['name'],'img':(tracke['tracks'][i]['album']['images'][0])['url'],'year':int(tracke['tracks'][i]['album']['release_date'][:4]),'album':tracke['tracks'][i]['album']['name']},ignore_index=True)
     return current_song , recommended
 
 

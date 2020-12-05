@@ -11,5 +11,4 @@ def song_url(name):
     result = result[0]
     return (result['external_urls'])['spotify'],sp
 
-
 #print(song_url('tum hi ho'))

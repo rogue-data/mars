@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-gb" lang="en-gb" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Youtube Autocomplete Search suggestion api using jquery</title>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+		  jQuery(function() {
+		    jQuery( "#hyv-search" ).autocomplete({
+		      source: function( request, response ) {
+		      	//console.log(request.term);
+		    	var sqValue = [];
+		        jQuery.ajax({
+			        type: "POST",
+			        url: "http://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=youtube&hjson=t&cp=1",
+			        dataType: 'jsonp',
+			        data: jQuery.extend({
+			            q: request.term
+			        }, {  }),
+			        success: function(data){
+			        	console.log(data[1]);
+			           	obj = data[1];
+						jQuery.each( obj, function( key, value ) {
+							sqValue.push(value[0]);
+						});
+			           	response( sqValue);
+			        }
+			    });
+		      }
+		    });
+		  });
+	  	</script>
+	  	<style type="text/css">
+			.container-4 input#hyv-search {
+				width: 500px;
+				height: 30px;
+				border: 1px solid #c6c6c6;
+			    font-size: 10pt;
+			    float: left;
+			    padding-left: 15px;
+			    -webkit-border-top-left-radius: 5px;
+			    -webkit-border-bottom-left-radius: 5px;
+			    -moz-border-top-left-radius: 5px;
+			    -moz-border-bottom-left-radius: 5px;
+			    border-top-left-radius: 5px;
+			    border-bottom-left-radius: 5px;
+			}
+			.container-4 button.icon {
+				height: 30px;
+				background: #f0f0f0 url('images/searchicon.png') 10px 1px no-repeat;
+				background-size: 24px;
+				-webkit-border-top-right-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+				-moz-border-radius-topright: 5px;
+				-moz-border-radius-bottomright: 5px;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;
+				border: 1px solid #c6c6c6;
+				width: 50px;
+				margin-left: -44px;
+				color: #4f5b66;
+				font-size: 10pt;
+			}
+	  	</style>
+	</head>
+
+	<body>
+		<div class="container-4">
+			<form action="" method="post" name="hyv-yt-search" id="hyv-yt-search">
+				<input type="search" name="hyv-search" id="hyv-search" placeholder="Search..." class="ui-autocomplete-input" autocomplete="off">
+				<button class="icon" id="hyv-searchBtn"></button>
+			</form>
+		</div>
+	</body>
+</html>

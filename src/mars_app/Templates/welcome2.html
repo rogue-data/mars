@@ -1,20 +1,19 @@
--<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Welcome to M.A.R.S</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
-  <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto Sans JP">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto Sans JP">
   <style type="text/css">
     .carousel-caption{
   position: absolute;
   top:55%;
   left:10%;
   }
-
   .w-100{
     height: 100vh;
 }
@@ -73,7 +72,6 @@ color:white;
 .info p{
   text-align: center;
   font-family:'aerial';
-
 }
 
 .info1{
@@ -114,9 +112,7 @@ color:white;
 .info2 p{
   text-align: center;
   font-family:'aerial';
-   
 }
-
 
 .fa {
   padding: 20px;
@@ -135,61 +131,107 @@ hr
    border-width: 2px;
    background-color: black; 
 } 
-
-.search {
-  width: 100%;
-  position: relative;
-  display: flex;
-  left: -5vw;
-}
-
-.searchTerm {
-  width: 100%;
-  border: none;
-  background-color: #fff;
-  padding: 14px;
-  height: 44px;
-  font-size: large;
-  text-align: center;
-  border-radius: 10px 0 0 10px;
-  outline: none;
-  color: #fff;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
-}
-
-.searchTerm:focus{
-  color: #000;
-}
-
-.searchButton {
-  width: 80px;
-  height: 44px;
-  border: none;
-  background: #fff;
-  text-align: center;
-  color: #1f1f1f;
-  border-radius: 0 10px 10px 0;
-  cursor: pointer;
-  font-size: 20px;
-}
-
-/*Resize the wrap to see the search bar change!*/
-.searchbar{
-  width: 40%;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
-}
-
-.fa-search{
-  position:relative;
-  padding: 0px; 
-  margin: 0px 0px;
-}
-}
-
+  
+.p3{
+    position:absolute;
+    bottom: 40vh;
+    left:25vw;
+  }
+   .P3{
+   position:absolute;
+    bottom: 35vh;
+    left:30vw; 
+  }
+  .text{
+    position: absolute;
+    top:9vh;
+    color: white;
+    left: 25vw;
+  }
+  .search {
+    width: 100%;
+    position: relative;
+    display: flex;
+    left: -5vw;
+  }
+  
+  .searchTerm {
+    width: 100%;
+    border: none;
+    background-color: #fff;
+    padding: 14px;
+    height: 45px;
+    font-size: large;
+    text-align: center;
+    border-radius: 10px 0 0 10px;
+    outline: none;
+    color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+  }
+  
+  .searchTerm:focus{
+    color: #000;
+  }
+  
+  .searchButton {
+    width: 80px;
+    height: 45px;
+    border: none;
+    background: #fff;
+    text-align: center;
+    color: #1f1f1f;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  /*Resize the wrap to see the search bar change!*/
+  .searchbar{
+    width: 40%;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+  }
+  .fa-search{
+    position:relative;
+    padding: 0px; 
+    margin: 0px 0px;
+  }
+  nav{
+    font-family: "Noto Sans JP";
+    left: 22vw;
+    font-weight: 100px;
+    position: absolute;
+    bottom: 10vh;
+  }
+  label{
+    cursor: pointer;
+    margin-right: 2vw;
+  }
+  input[type="radio"]{
+    display: none;
+  }
+  input[type="radio"]:checked+label{
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+  }
+  /* .fa-linkedin {
+     opacity: 1; 
+    color:#fff;
+    background:#0e76a8 ;
+  }
+  .fa-github {
+     opacity: 1; 
+    color:#fff;
+    background:#211F1F ;
+  }
+  .fa-instagram {
+   opacity: 1; 
+    color:#fff;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  }  */
   </style>
 </head>
 <body>
@@ -208,7 +250,7 @@ hr
 
     <div class="carousel-item active ">
       <div class="view">
-        <img class="d-block w-100" src="M12.jpg"
+        <img class="d-block w-100" src="{% static './images/M12.jpg' %}"
           alt="First slide">
         <div class="mask rgba-black-light"></div>
       </div>
@@ -220,10 +262,9 @@ hr
       </div>
     </div>
 
-
     <div class="carousel-item ">
       <div class="view">
-        <img class="d-block w-100" src="M2.jpg"
+        <img class="d-block w-100" src="{% static './images/M2.jpg' %}"
           alt="First slide">
         <div class="mask rgba-black-light"></div>
       </div>
@@ -235,46 +276,75 @@ hr
       <h2>INHABITANTS OF MARS</h2>
     </div>
     <div class="info">
-      <img src="donkey.jpg">
+      <img src="{% static './images/d1.jpg' %}">
       <p>SAGAR </p><hr>
-      <a href="#" class="fa fa-instagram circle-icon"></a>
-      <a href="#" class="fa fa-linkedin circle-icon"></a>
-      <a href="#" class="fa fa-github circle-icon"></a>
+      <a href="https://www.instagram.com/sagar_sk14/" class="fa fa-instagram"></a>
+      <a href="https://www.linkedin.com/in/sagar-sk/" class="fa fa-linkedin "></a>
+      <a href="https://github.com/Sagar-Kumar-007" class="fa fa-github "></a>
     </div>
     <div class="info1">
-      <img src="donkey.jpg">
+      <img src="{% static './images/d2.jpg' %}">
       <p>DANISH </p><hr>
-      <a href="#" class="fa fa-instagram circle-icon"></a>
-      <a href="#" class="fa fa-linkedin circle-icon"></a>
-      <a href="#" class="fa fa-github circle-icon"></a>
+      <a  href="https://www.instagram.com/danishgupta1207/" class="fa fa-instagram "></a>
+      <a  href="https://www.linkedin.com/in/danish-gupta-561457199" class="fa fa-linkedin "></a>
+      <a  href="https://github.com/danish1207" class="fa fa-github "></a>
     </div>
     <div class="info2">
-      <img src="donkey.jpg">
+      <img src="{% static './images/d3.jpg' %}">
       <p>SHIVANSH </p><hr>
-      <a href="#" class="fa fa-instagram circle-icon"></a>
-      <a href="#" class="fa fa-linkedin circle-icon"></a>
-      <a href="#" class="fa fa-github circle-icon"></a>
+      <a  href="https://www.instagram.com/shiv.a.n.sh/" class="fa fa-instagram "></a>
+      <a  href="https://www.linkedin.com/in/#/" class="fa fa-linkedin "></a>
+      <a  href="https://github.com/coastaldemigod" class="fa fa-github "></a>
     </div>
     </div>
 
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100" src="M3.jpg"
+        <img class="d-block w-100" src="{% static './images/M3.jpg' %}"
           alt="Third slide">
-         <div class="mask rgba-black-slight"></div>
-         </div>
-         <div class="carousel-caption">
-         <h1 class="p3">Explore M.A.R.S</h1>
-         <p class="P3">Search for the song that best suits you. </p>
-         <div class="searchbar">
+        <div class="mask rgba-black-slight"></div>
+      </div>
+      <div class="carousel-caption">
+        <h1 class="p3">Explore M.A.R.S</h1>
+        <p class="P3">Search for the song that best suits you. </p>
+        
+        <form action="song">
+          <!--Modes-->
+          <nav>
+            <h3>
+            
+            <input type="radio" id="for_you" checked name="mode" value="1" class="rad_switch">
+            <label class="switch" for="for_you">For you</label>
+
+            
+            <input type="radio" id="peace" name="mode" value="2" class="rad_switch">
+            <label class="switch" for="peace">Peace</label>
+            
+            
+            <input type="radio" id="work" name="mode" value="3" class="rad_switch">
+            <label class="switch" for="work">Work</label>
+
+            
+            <input type="radio" id="party" name="mode" value="4" class="rad_switch">
+            <label class="switch" for="party">Party</label>
+
+            
+            <input type="radio" id="workout" name="mode" value="5" class="rad_switch">
+            <label class="switch" for="workout">Workout</label>
+          </nav>
+            <!--Modes-->
+            <!--Search Bar-->
+      <div class="searchbar">
             <div class="search">
-            <input type="text" class="searchTerm" placeholder="What are you looking for?">
+            <input type="text" name="song_play" class="searchTerm" placeholder="What are you looking for?">
             <button type="submit" class="searchButton">
                 <i class="fa fa-search"></i>
             </button>
             </div>
         </div>
+      </form>
+        <!--End of Search Bar-->
       </div>
     </div>
   </div>
@@ -294,5 +364,11 @@ hr
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script>
+  $('#carousel-example-2').carousel({
+    interval: 5000,
+    wrap: false
+  });
+</script>
 </body>
 </html>

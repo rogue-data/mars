@@ -3,10 +3,6 @@
     src:url(./fonts/Comfortaa-Regular.ttf);
 }
 @font-face{
-    font-family: fon2;
-    src:url(./fonts/NanumGothic-Regular.ttf);
-}
-@font-face{
     font-family: fon3;
     src:url(./fonts/OpenSans-Regular.ttf);
 }

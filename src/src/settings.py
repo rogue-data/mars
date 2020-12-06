@@ -20,12 +20,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n6=jxq-2@705m_c*gb-7l$38c(r7p49z23kt@9)n4en9@u-33$'
+with open('./src/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['marsrd.pythonanywhere.com']
 
 # Application definition
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,3 +122,4 @@ USE_TZ = True
 STATIC_URL = '/mars_app/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'./mars_app/static')]
 STATIC_ROOT=os.path.join(BASE_DIR,'assets') 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'

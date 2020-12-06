@@ -29,4 +29,4 @@ def song_func(request,mode='default'):
     return render(request,'index.html',{'crr':crr,'rc':recommendations,'mode':(mode-1)*5,'dt':dataJSON,'csu':csu})
 
 def welcome(request):
-    return render(request,'welcome.html')
+    return render(request,'welcome2.html')

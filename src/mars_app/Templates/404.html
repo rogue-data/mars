@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ERROR 404 </title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Alike' rel='stylesheet'>
+
+<STYLE>
+	
+	img{
+		width: 100%;
+		height: 100%;
+
+	}
+	p{
+		position: absolute;
+		top:50%;
+		left:16%;
+		float: center;
+		text-align: center;
+		font-family: 'Alike';
+		color:rgb(255,240,254);
+  		font-size:35px;
+  		font-weight:1000;
+  		text-shadow:-1PX 1PX 0 #000,
+  		2px 2px 0 #000,
+  		1px -1px 0 #000,
+  		-2px -2px 0 #000;
+
+	}
+	h1{
+		position: absolute;
+		top:30%;
+		left:31%;
+		float: center;
+		text-align: center;
+		font-family: 'Alike';
+		color:rgb(255,240,254);
+  		font-size:80px;
+  		font-weight:800;
+  		text-shadow:-2PX 2PX 0 #000,
+  		2px 2px 0 #000,
+  		2px -2px 0 #000,
+  		-2px -2px 0 #000;
+
+	}
+</STYLE>
+</head>
+<body>
+	<img src="{% static './images/aliens.jpg' %}">
+	<h1> OH NOOOO!!!!</h1>
+	<p>IT LOOKS LIKE YOU HAVE BEEN CAPTURED BY MARTIANS <BR>
+		CLICK HERE TO RESPAWN.<BR>
+		<br>
+		<br>
+		<button href='#' type="button" class="btn btn-primary btn-lg">RESPAWN</button>
+	</p>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

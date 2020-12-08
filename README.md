@@ -85,7 +85,7 @@ This will run the webapp on your localhost [127.0.0.1:8000](http://127.0.0.1:800
 
 ## Developed and maintained by:
 - [Shivansh Agrawal](https://github.com/coastaldemigod)
-- [Sagar Kumar](https://github.com/sagarsk007)
-- [Danish Gupta](https://github.com/)
+- [Sagar Kumar](https://github.com/Sagar-Kumar-007)
+- [Danish Gupta](https://github.com/danish1207)
 
 Star the repo and start contributing :)

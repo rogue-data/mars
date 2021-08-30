@@ -35,7 +35,6 @@ suit your taste using its unique algorithm. You can also fine tune your music th
 
 ## File structure
 ```
-├── misc ( contains previously tried recommendation engines and datasets)
 ├── src
 │   ├── assets ( contains css, js, fonts and images which are used in website)
 │   ├── mars_app
@@ -58,8 +57,6 @@ suit your taste using its unique algorithm. You can also fine tune your music th
 │   ├── db.sqlite3
 │   └── requirements.pip
 ├── README.md
-├── recommendation_engine_songs.ipynb
-├── src.zip
 └── .gitignore
 ```
 

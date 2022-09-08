@@ -3,7 +3,7 @@
 M.A.R.S is a user friendly music recommendation system.
 
 It provides you with music to
-suit your taste using its unique algorithm. You can also fine tune your music through different modes.[Check it out](https://marsrd.pythonanywhere.com)
+suit your taste using its unique algorithm. You can also fine tune your music through different modes.
 
 ## Tech Stack
 - Web Technologies 
